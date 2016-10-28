@@ -24,8 +24,8 @@ module.exports = {
     sourceMapFilename: '[file].map'
   },
   plugins: [
-    new webpack.optimize.OccurrenceOrderPlugin(),
-    new webpack.DefinePlugin({
+    new webpack.optimize.OccurrenceOrderPlugin(), //处理分包的机制的插件
+    new webpack.DefinePlugin({   //定义全局变量
       'process.env': {
         'NODE_ENV': JSON.stringify('production')
       }

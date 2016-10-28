@@ -4,7 +4,9 @@
   "description": "use React and Redux example",
   "scripts": {
     "start": "node app/main",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "build:webpack": "NODE_ENV=production webpack --config webpack.config.prod.js --progress --colors",
+    "build": "npm run build:webpack"
   },
   "repository": {
     "type": "git",
