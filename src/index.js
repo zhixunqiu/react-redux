@@ -21,7 +21,12 @@ const history = syncHistoryWithStore(browserHistory, store)
 
 const rootRoute = {
   path: '/',
-  component: require('./containers/App').default,
+  //component: require('./containers/App').default,
+  // getComponents(location, callback) {
+  //   require.ensure([], function (require) {
+  //     callback(null, require('./components/Course'))
+  //   })
+  // }
   getIndexRoute(location, cb) {
     require.ensure([], (require) => {
       cb(null, require('./routes/Index'))
