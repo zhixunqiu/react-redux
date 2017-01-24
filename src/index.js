@@ -6,6 +6,8 @@ import { Router, browserHistory } from 'react-router'
 import { syncHistoryWithStore,routerReducer } from 'react-router-redux'
 import configureStore from './store/configureStore'
 
+import './style/common.css'
+
 // require.ensure(['./libs/mofang-0.1.17.min.js'],function(require){
 //   var mofang = require('./libs/mofang-0.1.17.min.js')
 //   window.mofang = mofang;
@@ -22,16 +24,16 @@ const history = syncHistoryWithStore(browserHistory, store)
 const rootRoute = {
   path: '/',
   //component: require('./containers/App').default,
-  // getComponents(location, callback) {
-  //   require.ensure([], function (require) {
-  //     callback(null, require('./components/Course'))
-  //   })
-  // }
-  getIndexRoute(location, cb) {
-    require.ensure([], (require) => {
-      cb(null, require('./routes/Index'))
-    },"index")
+  getComponents(partialNextState, callback) {
+    require.ensure([], function (require) {
+      callback(null, require('./routes/Index/main'))
+    })
   },
+  // getIndexRoute(partialNextState, cb) {
+  //   require.ensure([], (require) => {console.log(1)
+  //     cb(null, require('./routes/Index').default)
+  //   },"index")
+  // },
   getChildRoutes(location, cb) {
     require.ensure([], (require) => {
       cb(null, [
