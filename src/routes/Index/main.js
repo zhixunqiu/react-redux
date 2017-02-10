@@ -6,7 +6,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
 import * as mainAction from '../../actions/main'
-import '../../style/global.css'
+import '../../style/common.css'
 
 function mapStateToProps(state) {
 	const { postsForMenu , postsForInfo } = state.main;
@@ -47,14 +47,20 @@ class pageDefault extends Component{
 
 	render(){
 		const { info,menu,mainIsFetching,menuIsFetching } = this.props
-		return (
-			<div>
-				<section>欢迎您，{info.name}小姐！</section>
-				<section className="list">
-					<div>ddd</div>
-				</section>
-			</div>
-		)
+
+		let returnCom = !mainIsFetching && !menuIsFetching ? null :
+			(<div className="container"><section className="fz-30 header">欢迎您，{info.name}小姐！</section>
+				<ul className="fz-28 menu">
+					{menu.list.map((v) => {
+							return (<li className="flex menu-li">
+								<span className="flex-left">{v}</span>
+								<span className="arrow-right flex-right"></span>
+							</li>)
+						}
+					)}
+				</ul>
+			</div>)
+		return returnCom
 	}
 }
 

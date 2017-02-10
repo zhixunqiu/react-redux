@@ -13,7 +13,7 @@ var res = {
     success: function() {
         return _.extend({}, defaults, {
             data: {
-                list:[]
+                list:['123','微微']
             }
         });
     },

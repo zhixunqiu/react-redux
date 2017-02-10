@@ -10,13 +10,13 @@ var CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
 
 module.exports = {
   devtool: 'cheap-module-eval-source-map',
-  // entry: [
-  //   //'webpack-hot-middleware/client',
-  //   './src/index'
-  // ],
-  entry: {
-    'index' : './src/index'
-  },
+   entry: [
+     //'webpack-hot-middleware/client',
+     './src/index'
+   ],
+  //entry: {
+  //  'index' : './src/index'
+  //},
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
@@ -71,8 +71,8 @@ module.exports = {
         loader: 'file'
       },{
         test: /\.css/,
-        loader: ExtractTextPlugin.extract('style', 'css', 'postcss')
-        //loader: 'style!css!postcss!less'
+        //loader: ExtractTextPlugin.extract('style', 'css', 'postcss')
+        loader: 'style!css!postcss!less'
       },{
         test: /\.(png|jpg|gif)$/,
         loader: 'url?limit=300000'

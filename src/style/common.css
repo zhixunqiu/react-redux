@@ -1,0 +1,47 @@
+.container{
+}
+.header{
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    padding: 20px 0px;
+    background-color: #004444;
+    color: #fff;
+}
+.menu{
+    margin: 20px;
+}
+.arrow-right{
+    position: relative;
+}
+.arrow-right:after,.arrow-right:before{
+    border: 10px solid transparent;
+    border-left: 10px solid #f0f0f0;
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: -10px;
+    right: 0px;
+    content: '';
+}
+.arrow-right:before{
+    border-left-color: #f00;
+    right: -1px;
+}
+.flex{
+    display: box;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+}
+.flex-left{
+    flex: 1;
+}
+.flex-right{
+    flex: 0 0 20px;
+}
+.menu-li{
+    height: 6rem;
+    align-items: center;
+    border-top: 1px solid gray;
+}

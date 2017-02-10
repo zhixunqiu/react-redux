@@ -72,3 +72,13 @@ a {
 li {
     list-style: none
 }
+
+.fz-24{
+    font-size: 2.4rem;
+}
+.fz-28{
+    font-size: 2.8rem;
+}
+.fz-30{
+    font-size: 3rem;
+}

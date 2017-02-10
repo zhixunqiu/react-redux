@@ -6,17 +6,7 @@ import { Router, browserHistory } from 'react-router'
 import { syncHistoryWithStore,routerReducer } from 'react-router-redux'
 import configureStore from './store/configureStore'
 
-import './style/common.css'
-
-// require.ensure(['./libs/mofang-0.1.17.min.js'],function(require){
-//   var mofang = require('./libs/mofang-0.1.17.min.js')
-//   window.mofang = mofang;
-// },'mofang')
-
-// require.ensure([],function(require){
-//   require('../styles/mofang.css')
-//   require('../styles/global.css')
-// },'style')
+import './style/global.css'
 
 const store = configureStore()
 const history = syncHistoryWithStore(browserHistory, store)
