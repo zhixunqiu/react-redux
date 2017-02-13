@@ -14,20 +14,20 @@ const history = syncHistoryWithStore(browserHistory, store)
 const rootRoute = {
   path: '/',
   //component: require('./containers/App').default,
-  getComponents(partialNextState, callback) {
-    require.ensure([], function (require) {
-      callback(null, require('./routes/Index/main'))
-    })
-  },
-  // getIndexRoute(partialNextState, cb) {
-  //   require.ensure([], (require) => {console.log(1)
-  //     cb(null, require('./routes/Index').default)
-  //   },"index")
-  // },
+  //getComponents(partialNextState, callback) {
+  //  require.ensure([], function (require) {
+  //    callback(null, require('./routes/Index/main'))
+  //  })
+  //},
+   getIndexRoute(partialNextState, cb) {
+     require.ensure([], (require) => {
+       cb(null, require('./routes/Index'))
+     },"index")
+   },
   getChildRoutes(location, cb) {
     require.ensure([], (require) => {
       cb(null, [
-        //require('./routes/CompanyDefault') // 小企业版首页
+        require('./routes/UserInfo')
       ])
     },"index_router")
   }

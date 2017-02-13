@@ -5,8 +5,8 @@ import { browserHistory } from 'react-router'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-import * as mainAction from '../../actions/main'
-import '../../style/common.css'
+import * as mainAction from '../../../actions/main'
+import '../../../style/common.css'
 
 function mapStateToProps(state) {
 	const { postsForMenu , postsForInfo } = state.main;
@@ -35,8 +35,9 @@ function mapDispatchToProps(dispatch){
 }
 
 class pageDefault extends Component{
-	constructor(){
-		super()
+	constructor(props){
+		super(props)
+		this.setClick = this.setClick.bind(this)
 	}
 
 	componentDidMount() {
@@ -45,12 +46,19 @@ class pageDefault extends Component{
 		initMenu();
 	}
 
+	setClick(){
+		browserHistory.push('/userDefault')
+	}
+
 	render(){
 		const { info,menu,mainIsFetching,menuIsFetching } = this.props
-
 		let returnCom = !mainIsFetching && !menuIsFetching ? null :
-			(<div className="container"><section className="fz-30 header">欢迎您，{info.name}小姐！</section>
-				<ul className="fz-28 menu">
+			(<div className="container">
+				<section className="flex fz-24 header">
+					<span className="flex-left">欢迎您，{info.name}小姐!</span>
+					<i className="flex-right" onClick={this.setClick}>1</i>
+				</section>
+				<ul className="fz-16 menu">
 					{menu.list.map((v) => {
 							return (<li className="flex menu-li">
 								<span className="flex-left">{v}</span>

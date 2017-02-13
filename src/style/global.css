@@ -73,12 +73,9 @@ li {
     list-style: none
 }
 
+.fz-16{
+    font-size: 1.6rem;
+}
 .fz-24{
     font-size: 2.4rem;
-}
-.fz-28{
-    font-size: 2.8rem;
-}
-.fz-30{
-    font-size: 3rem;
 }

@@ -4,7 +4,7 @@
     height: 60px;
     line-height: 60px;
     text-align: center;
-    padding: 20px 0px;
+    padding: 2rem 1.6rem;
     background-color: #004444;
     color: #fff;
 }
@@ -41,7 +41,8 @@
     flex: 0 0 20px;
 }
 .menu-li{
-    height: 6rem;
+    height: 4rem;
     align-items: center;
-    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
 }
+.pad-16{padding: 16px;}
