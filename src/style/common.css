@@ -33,16 +33,121 @@
     display: -webkit-box;
     display: -webkit-flex;
     display: flex;
+    -webkit-box-align: center; /*Safari,Opera,Chrome*/
+    box-align: center;
+    align-items: center;
 }
 .flex-left{
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
     flex: 1;
 }
-.flex-right{
+.flex-right-20{
+    /*-webkit-box-flex:  1;
+    -webkit-flex:  1;*/
+    width: 20px;
     flex: 0 0 20px;
+}
+.flex-right-40{
+    width: 40px;
+    flex: 0 0 40px;
 }
 .menu-li{
     height: 4rem;
-    align-items: center;
     border-bottom: 1px solid gray;
 }
 .pad-16{padding: 16px;}
+.heart{
+    width: 40px;
+    height: 34px;
+    position: relative;
+}
+.heart:before,.heart:after{
+    width: 20px;
+    height: 34px;
+    background-color: red;
+    position:absolute;
+    content: "";
+    border-radius: 20px 20px 0 0;
+}
+.heart:before{
+    left: 20px;
+    top: 0;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform : rotate(-45deg);
+    transform: rotate(-45deg);
+    -webkit-transform-origin: left bottom;
+    -moz-transform-origin: left bottom;
+    -o-transform-origin: left bottom;
+    transform-origin: left bottom;
+}
+.heart:after{
+    left: 0;
+    top: 0;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform : rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-transform-origin: right bottom;
+    -moz-transform-origin: right bottom;
+    -o-transform-origin: right bottom;
+    transform-origin: right bottom;
+}
+
+.layer{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    z-index: 999;
+    background-color: #000;
+    opacity: 0.5;
+}
+.bottom{
+    position: absolute;
+    width: 100%;
+    z-index:9999;
+    background-color: #F0F0F0;
+}
+.h-50{
+    height:5rem;
+}
+.bottombtn{
+    display: inline-block;
+    letter-spacing: 0px;
+}
+.bottom-0{
+    bottom: 0px;
+}
+.bottom-d136{
+    bottom: -136px;
+}
+.block{
+    display: block;
+}
+.layer-appear {
+    bottom: -136px;
+    -webkit-transition: bottom .5s ease-in;
+    transition: bottom .5s ease-in;
+}
+.layer-appear.layer-appear-active {
+    bottom: 0px;
+}
+.layer-enter {
+    bottom: -136px;
+    -webkit-transition: bottom .5s ease-in;
+    transition: bottom .5s ease-in;
+}
+.layer-enter.layer-enter-active {
+    bottom: 0px;
+}
+.layer-leave {
+    bottom: 0px;
+    -webkit-transition: bottom .5s ease-in;
+    transition: bottom .5s ease-in;
+}
+
+.layer-leave.layer-leave-active {
+    bottom: -136px;
+}

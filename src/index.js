@@ -24,13 +24,12 @@ const rootRoute = {
        cb(null, require('./routes/Index'))
      },"index")
    },
-  getChildRoutes(location, cb) {
-    require.ensure([], (require) => {
-      cb(null, [
-        require('./routes/UserInfo')
+   getChildRoutes(location, cb) {
+     require.ensure([], (require) => {
+       cb(null, [require('./routes/UserInfo')
       ])
-    },"index_router")
-  }
+     },"index_router")
+   }
 }
 
 render(

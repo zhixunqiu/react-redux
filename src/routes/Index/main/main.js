@@ -5,6 +5,8 @@ import { browserHistory } from 'react-router'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
+import Layer from '../../../components/layer'
+
 import * as mainAction from '../../../actions/main'
 import '../../../style/common.css'
 
@@ -38,6 +40,10 @@ class pageDefault extends Component{
 	constructor(props){
 		super(props)
 		this.setClick = this.setClick.bind(this)
+		this.handleCancel = this.handleCancel.bind(this)
+		this.state = {
+			isShow : false
+		}
 	}
 
 	componentDidMount() {
@@ -47,7 +53,18 @@ class pageDefault extends Component{
 	}
 
 	setClick(){
-		browserHistory.push('/userDefault')
+		//browserHistory.push('/userDefault')
+		//browserHistory.push({
+		//	pathname:'/userDefault',
+		//	state: 'sss',
+		//	search: '?form=index',
+		//	query:{'q':'you'}
+		//})
+		this.setState({isShow : true});
+	}
+
+	handleCancel(){
+		this.setState({isShow : false});
 	}
 
 	render(){
@@ -55,18 +72,19 @@ class pageDefault extends Component{
 		let returnCom = !mainIsFetching && !menuIsFetching ? null :
 			(<div className="container">
 				<section className="flex fz-24 header">
-					<span className="flex-left">欢迎您，{info.name}小姐!</span>
-					<i className="flex-right" onClick={this.setClick}>1</i>
+					<div className="flex-left">欢迎您，{info.name}小姐!</div>
+					<span className="block flex-right-40 heart" onClick={this.setClick}></span>
 				</section>
 				<ul className="fz-16 menu">
 					{menu.list.map((v) => {
 							return (<li className="flex menu-li">
-								<span className="flex-left">{v}</span>
-								<span className="arrow-right flex-right"></span>
+								<span className="block flex-left">{v}</span>
+								<span className="block arrow-right flex-right-20"></span>
 							</li>)
 						}
 					)}
 				</ul>
+				<Layer isShow={this.state.isShow} handleCancel={this.handleCancel}/>
 			</div>)
 		return returnCom
 	}
