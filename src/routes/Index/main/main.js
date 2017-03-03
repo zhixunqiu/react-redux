@@ -54,13 +54,13 @@ class pageDefault extends Component{
 
 	setClick(){
 		//browserHistory.push('/userDefault')
-		//browserHistory.push({
-		//	pathname:'/userDefault',
-		//	state: 'sss',
-		//	search: '?form=index',
-		//	query:{'q':'you'}
-		//})
-		this.setState({isShow : true});
+		browserHistory.push({
+			pathname:'/userDefault',
+			state: 'sss',
+			search: '?form=index',
+			query:{'q':'you'}
+		})
+		//this.setState({isShow : true});
 	}
 
 	handleCancel(){

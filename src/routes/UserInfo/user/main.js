@@ -4,14 +4,18 @@
 import React, {Component,PropTypes} from 'react'
 import ReactDOM from 'react-dom'
 
+import Circle from '../../../components/circle'
+
 class UserInfo extends Component {
     constructor(props) {
         super(props)
     }
     render() {
+        let width = 150,
+            height = 150
         return (
             <div>
-                hahahah
+                <Circle id="circle" width={width} height={height}/>
             </div>
         )
     }

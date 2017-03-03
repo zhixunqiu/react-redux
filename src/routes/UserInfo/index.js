@@ -8,13 +8,13 @@ module.exports = {
             cb(null, {
                 component: require('./user/main'),
             })
-        },"router_info")
+        },"index_router")
     },
-    getComponent(nextState, cb) {
-        require.ensure([], (require) => {
-            cb(null, require('./user/index.js'))
-        },"router_info")
-    },
+    //getComponent(nextState, cb) {
+    //    require.ensure([], (require) => {
+    //        cb(null, require('./user/index.js'))
+    //    },"router_info")
+    //},
     getChildRoutes(partialNextState, cb) {
         require.ensure([], (require) => {
             cb(null, [

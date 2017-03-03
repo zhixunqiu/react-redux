@@ -20,7 +20,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
-    chunkFilename: '[id].chunk-[chunkhash:8].js',
+    chunkFilename: '[name].chunk-[chunkhash:8].js',
     publicPath: '/static/',
     sourceMapFilename: '[file].map'
   },
